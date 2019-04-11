@@ -21,15 +21,15 @@
             <li class="{{ \App\Helpme::isActiveRoute('store_dashboard') }}">
                 <a href="{{ url('store_dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
-            {{-- <li class="{{ \App\Helpme::isActiveRoute('store') }}">
-                <a href="{{ url('store') }}"><i class="fa fa-home"></i> <span class="nav-label">Store</span> </a>
+             <li class="{{ \App\Helpme::isActiveRoute('staff') }}">
+                <a href="{{ url('staff') }}"><i class=" fa fa-user-md"></i> <span class="nav-label">Staff</span> </a>
             </li>
-            <li class="{{ \App\Helpme::isActiveRoute('category') }}">
-                <a href="{{ url('category') }}"><i class="fa fa-step-forward"></i> <span class="nav-label">Category</span> </a>
-            </li>
-            <li class="{{ \App\Helpme::isActiveRoute('sub_category') }}">
-                <a href="{{ url('sub_category') }}"><i class="fa fa-play"></i> <span class="nav-label">Sub Category</span> </a>
-            </li> --}}
+            {{--<li class="{{ \App\Helpme::isActiveRoute('category') }}">--}}
+                {{--<a href="{{ url('category') }}"><i class="fa fa-step-forward"></i> <span class="nav-label">Category</span> </a>--}}
+            {{--</li>--}}
+            {{--<li class="{{ \App\Helpme::isActiveRoute('sub_category') }}">--}}
+                {{--<a href="{{ url('sub_category') }}"><i class="fa fa-play"></i> <span class="nav-label">Sub Category</span> </a>--}}
+            {{--</li> --}}
            
         </ul>
 

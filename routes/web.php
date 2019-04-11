@@ -26,13 +26,7 @@ Route::group(['middleware' => 'usersession'], function () {
     Route::get('edit_store/{id}', 'StoreController@edit_store');
     Route::get('update_store/{id}', 'StoreController@update_store');
     Route::get('del_store', 'StoreController@del_store');
-    //----------------------------- Store / Staff-----------------------------//
-    Route::get('staff', 'StoreController@staff')->name("store");
-//    Route::get('insert_store', 'StoreController@insert_store')->name("store");
-//    Route::get('check_store_username', 'StoreController@check_store_username');
-//    Route::get('edit_store/{id}', 'StoreController@edit_store');
-//    Route::get('update_store/{id}', 'StoreController@update_store');
-//    Route::get('del_store', 'StoreController@del_store');
+
     //----------------------------- Vendor -----------------------------//
     Route::get('vendor', 'VendorController@vendor')->name("vendor");
     Route::get('insert_vendor', 'VendorController@insert_vendor');
@@ -75,6 +69,14 @@ Route::POST('check_store', 'LoginController@check_store');
 Route::get('s_logout', 'LoginController@s_logout');
 // Route::get('s_logout', 'LoginController@s_logout');
 
-Route::group(['middleware' => 'storesession'], function () {
+Route::group(['middleware' => 'storesession'], function ()
+{
     Route::get('store_dashboard', 'StoreMasterController@store_dashboard')->name("store_dashboard");
+    //----------------------------- Store / Staff-----------------------------//
+    Route::get('staff', 'StaffController@staff')->name("staff");
+    Route::get('insert_staff', 'StaffController@insert_staff')->name("store");
+    Route::get('check_staff_username', 'StaffController@check_staff_username');
+    Route::get('edit_staff/{id}', 'StaffController@edit_staff');
+    Route::get('update_staff/{id}', 'StaffController@update_staff');
+    Route::get('del_staff', 'StaffController@del_staff');
 });
