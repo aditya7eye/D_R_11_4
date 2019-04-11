@@ -77,4 +77,8 @@ Route::get('s_logout', 'LoginController@s_logout');
 
 Route::group(['middleware' => 'storesession'], function () {
     Route::get('store_dashboard', 'StoreMasterController@store_dashboard')->name("store_dashboard");
+    
+    ///////////products
+    Route::get('products', 'ProductController@products')->name("products");
+
 });

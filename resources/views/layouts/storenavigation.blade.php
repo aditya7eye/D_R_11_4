@@ -21,6 +21,9 @@
             <li class="{{ \App\Helpme::isActiveRoute('store_dashboard') }}">
                 <a href="{{ url('store_dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
+            <li class="{{ \App\Helpme::isActiveRoute('products') }}">
+                <a href="{{ url('products') }}"><i class="fa fa-trello"></i> <span class="nav-label">Products</span> </a>
+            </li>
             {{-- <li class="{{ \App\Helpme::isActiveRoute('store') }}">
                 <a href="{{ url('store') }}"><i class="fa fa-home"></i> <span class="nav-label">Store</span> </a>
             </li>

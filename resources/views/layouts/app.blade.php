@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="{{ url('css/vendor.css') }}" />
     <link rel="stylesheet" href="{{ url('css/app.css') }}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <style>
@@ -80,6 +82,18 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 
+<script>
+$(document).ready(function () {
+           
+
+            $(".typeDD").select2({
+                placeholder: "Select"
+            });
+
+
+        });
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     
 @section('scripts') @show
 
