@@ -26,6 +26,13 @@ Route::group(['middleware' => 'usersession'], function () {
     Route::get('edit_store/{id}', 'StoreController@edit_store');
     Route::get('update_store/{id}', 'StoreController@update_store');
     Route::get('del_store', 'StoreController@del_store');
+    //----------------------------- Store / Staff-----------------------------//
+    Route::get('staff', 'StoreController@staff')->name("store");
+//    Route::get('insert_store', 'StoreController@insert_store')->name("store");
+//    Route::get('check_store_username', 'StoreController@check_store_username');
+//    Route::get('edit_store/{id}', 'StoreController@edit_store');
+//    Route::get('update_store/{id}', 'StoreController@update_store');
+//    Route::get('del_store', 'StoreController@del_store');
     //----------------------------- Vendor -----------------------------//
     Route::get('vendor', 'VendorController@vendor')->name("vendor");
     Route::get('insert_vendor', 'VendorController@insert_vendor');
