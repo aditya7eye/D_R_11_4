@@ -15,73 +15,106 @@
                     <!-- Nav tabs -->
                     <form action="{{ url('update_vendor').'/'.$edit->id }}" method="GET" id="update_vendor">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">Vendor Name</label>
-                                    <input type="text" name="name" value="{{ $edit->name }}"
+                                    <label for="" class="pull-left">Vendor Name *</label>
+                                    <input type="text"
+                                           name="name"
+                                           value="{{$edit->name}}"
                                            autocomplete="off"
                                            class="form-control required"
                                            placeholder="Enter Name">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">Contact</label>
-                                    <input type="tel" name="contact" autocomplete="off"
-                                           class="form-control required"
-                                           value="{{ $edit->contact }}"
+                                    <label for="" class="pull-left">Contact *</label>
+                                    <input type="tel"
+                                           name="contact"
+                                           value="{{$edit->contact}}"
+                                           autocomplete="off"
+                                           class="form-control required nospc"
                                            placeholder="Enter Mobile Number">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-5">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">GST No.</label>
+                                    <label for="address" class="pull-left">Full Address *</label>
+                                    <input type="text"
+                                           name="address"
+                                           maxlength="25"
+                                           id="address"
+                                           value="{{$edit->address}}"
+                                           autocomplete="off"
+                                           class="form-control required nospc"
+                                           placeholder="Enter Vendor's Full Address">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="bank" class="pull-left">Bank Name *</label>
+                                    <input type="text"
+                                           name="bank"
+                                           maxlength="25"
+                                           id="bank"
+                                           value="{{$edit->bank}}"
+                                           autocomplete="off"
+                                           class="form-control required"
+                                           placeholder="Enter Bank Name">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="account" class="pull-left">Bank Account Number *</label>
+                                    <input type="text"
+                                           name="account"
+                                           maxlength="25"
+                                           id="account"
+                                           value="{{$edit->account}}"
+                                           autocomplete="off"
+                                           class="form-control required nospc"
+                                           placeholder="Enter Account Number">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="gst_no" class="pull-left">GST Number *</label>
                                     <input type="text"
                                            name="gst_no"
-                                           maxlength="25"
+                                           maxlength="20"
                                            id="gst_no"
+                                           value="{{$edit->gst_no}}"
                                            autocomplete="off"
-                                           value="{{ $edit->gst_no }}"
                                            class="form-control required nospc"
                                            placeholder="Enter GST Number">
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">IGST %</label>
-                                    <input type="text" name="igst"
+                                    <label for="amount" class="pull-left">Opening Amount *</label>
+                                    <input type="text"
+                                           name="amount"
                                            maxlength="25"
-                                           id="igst"
-                                           autocomplete="off"
-                                           value="{{ $edit->igst }}"
-                                           class="form-control required nospc" placeholder="Enter IGST %">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="form-group">
-                                    <label for="" class="pull-left">SGST %</label>
-                                    <input type="text" name="sgst" maxlength="25"
-                                           id="sgst"
-                                           value="{{ $edit->sgst }}"
+                                           id="amount"
+                                           value="{{$edit->amount}}"
                                            autocomplete="off"
                                            class="form-control required nospc"
-                                           placeholder="Enter SGST %">
+                                           placeholder="Enter Opening Amount">
                                 </div>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">CGST %</label>
-                                    <input type="text" name="cgst"
-                                           maxlength="25"
-                                           id="cgst"
-                                           value="{{ $edit->cgst }}"
-                                           autocomplete="off"
-                                           class="form-control required nospc"
-                                           placeholder="Enter CGST %">
+                                    <label for="" class="pull-left">Transaction Type *</label>
+                                    <select name="ttype" id="ttype" class="form-control required">
+                                        <option value="{{$edit->ttype}}">{{$edit->ttype}}</option>
+                                        <option value="Credit">Credit</option>
+                                        <option value="Debit">Debit</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary pull-left">Update Vendor &nbsp;<i class="fa fa-users"></i></button>
                                 </div>

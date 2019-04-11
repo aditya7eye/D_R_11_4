@@ -19,9 +19,11 @@ class VendorController extends Controller
         $vendor->name = request('name');
         $vendor->contact = request('contact');
         $vendor->gst_no = request('gst_no');
-        $vendor->igst = request('igst');
-        $vendor->sgst = request('sgst');
-        $vendor->cgst = request('cgst');
+        $vendor->address = request('address');
+        $vendor->bank = request('bank');
+        $vendor->account = request('account');
+        $vendor->amount = request('amount');
+        $vendor->ttype = request('ttype');
         $vendor->save();
         return back()->with('message', 'Vendor Has Been Added Successfully:)');
     }
@@ -50,9 +52,11 @@ class VendorController extends Controller
         $vendor->name = request('name');
         $vendor->contact = request('contact');
         $vendor->gst_no = request('gst_no');
-        $vendor->igst = request('igst');
-        $vendor->sgst = request('sgst');
-        $vendor->cgst = request('cgst');
+        $vendor->address = request('address');
+        $vendor->bank = request('bank');
+        $vendor->account = request('account');
+        $vendor->amount = request('amount');
+        $vendor->ttype = request('ttype');
         $vendor->save();
         return redirect('vendor')->with('message', 'Vendor Information Has Been Updated Successfully:)');
     }
