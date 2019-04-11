@@ -11,7 +11,7 @@
 
                     <hr>
 
-/////
+{{--/////--}}
                     <!-- Nav tabs -->
                     <form action="{{ url('update_brand').'/'.$edit->id }}" method="GET" id="update_vendor">
                         <div class="row">
