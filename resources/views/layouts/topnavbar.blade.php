@@ -9,10 +9,16 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <a href="#">
+            <li> @if(isset(session('adminmaster')->id))
+                <a href="{{ url('logout') }}">
                     <i class="fa fa-sign-out"></i> Log out
                 </a>
+                @elseif(isset(session('store')->id)) 
+                <a href="{{ url('s_logout') }}">
+                    <i class="fa fa-sign-out"></i> Log out
+                </a>
+                @endif
+                
             </li>
         </ul>
     </nav>

@@ -1,47 +1,46 @@
 @extends('layouts.app') 
-@section('title', 'Edit Store') 
+@section('title', 'Edit Category') 
 @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
             <div class="text-center m-t-lg mybg">
                 <h1>
-                    Edit <b>Store</b>
+                    Edit <b>Sub-Category</b>
                 </h1>
                 
                 <hr>
 
 
                 <!-- Nav tabs -->
-                <form action="{{ url('update_store').'/'.$edit->id }}" method="GET" id="update_store">
+                <form action="{{ url('update_sub_category').'/'.$edit->id }}" method="GET" id="update_sub_category">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">Store Name</label>
+                                    <label for="" class="pull-left">Category</label>
+                                    {{-- <input type="text" name="name" autocomplete="off" class="form-control required" placeholder="Enter Category Name"> --}}
+                                    <select name="p_id" id="p_id" class="form-control requiredDD">
+                                        <option value="">Select Category</option>
+                                        @foreach ($catlist as $obj)
+                                        @if($obj->id == $edit->parent_id)
+                                        <option value="{{ $obj->id }}" selected>{{ ucwords($obj->name) }}</option>
+                                        @else
+                                        <option value="{{ $obj->id }}">{{ ucwords($obj->name) }}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="" class="pull-left">Name</label>
                                     <input type="text" name="name" value="{{ $edit->name }}" autocomplete="off" class="form-control required" placeholder="Enter Name">
                                 </div>
                             </div>
+                          
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="" class="pull-left">Location</label>
-                                    <input type="text" name="location" value="{{ $edit->location }}" autocomplete="off" class="form-control required" placeholder="Enter Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="" class="pull-left">Username</label>
-                                    <input type="text" name="username" value="{{ $edit->username }}" maxlength="25" id="username" autocomplete="off" class="form-control required nospc"  placeholder="Enter Name" disabled>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="" class="pull-left">Password</label>
-                                    <input type="text" maxlength="25" name="password" autocomplete="off" class="form-control required" value="{{ $edit->password }}" placeholder="Enter Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                  <button type="submit" class="btn btn-primary pull-left">Update Branch &nbsp;<i class="fa fa-home"></i></button>
+                                  <button type="submit" class="btn btn-primary pull-left">Update Sub-Category &nbsp;<i class="fa fa-step-forward"></i></button>
                                 </div>
                             </div>
                         </div>

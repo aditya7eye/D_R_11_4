@@ -18,10 +18,10 @@
                     IN+
                 </div>
             </li>
-            <li class="{{ \App\Helpme::isActiveRoute('master_dashboard') }}">
-                <a href="{{ url('master_dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+            <li class="{{ \App\Helpme::isActiveRoute('store_dashboard') }}">
+                <a href="{{ url('store_dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
-            <li class="{{ \App\Helpme::isActiveRoute('store') }}">
+            {{-- <li class="{{ \App\Helpme::isActiveRoute('store') }}">
                 <a href="{{ url('store') }}"><i class="fa fa-home"></i> <span class="nav-label">Store</span> </a>
             </li>
             <li class="{{ \App\Helpme::isActiveRoute('category') }}">
@@ -29,7 +29,7 @@
             </li>
             <li class="{{ \App\Helpme::isActiveRoute('sub_category') }}">
                 <a href="{{ url('sub_category') }}"><i class="fa fa-play"></i> <span class="nav-label">Sub Category</span> </a>
-            </li>
+            </li> --}}
            
         </ul>
 
