@@ -17,13 +17,33 @@ Route::get('/', 'LoginController@login');
 Route::POST('check_user', 'LoginController@check_user');
 Route::get('logout', 'LoginController@logout');
 
-Route::group(['middleware' => 'usersession'], function () {
+Route::group(['middleware' => 'usersession'], function ()
+{
     Route::get('master_dashboard', 'MasterController@master_dashboard')->name("master_dashboard");
-    //////// store
+    //----------------------------- store -----------------------------//
     Route::get('store', 'StoreController@store')->name("store");
     Route::get('insert_store', 'StoreController@insert_store')->name("store");
     Route::get('check_store_username', 'StoreController@check_store_username');
     Route::get('edit_store/{id}', 'StoreController@edit_store');
     Route::get('update_store/{id}', 'StoreController@update_store');
     Route::get('del_store', 'StoreController@del_store');
+    //----------------------------- Vendor -----------------------------//
+    Route::get('vendor', 'VendorController@vendor')->name("vendor");
+    Route::get('insert_vendor', 'VendorController@insert_vendor');
+    Route::get('edit_vendor/{id}', 'VendorController@edit_vendor');
+    Route::get('update_vendor/{id}', 'VendorController@update_vendor');
+    Route::get('del_vendor', 'VendorController@del_vendor');
+    //----------------------------- Vendor -----------------------------//
+    Route::get('unit', 'UnitController@unit')->name("unit");
+    Route::get('insert_unit', 'UnitController@insert_unit');
+    Route::get('edit_unit/{id}', 'UnitController@edit_unit');
+    Route::get('update_unit/{id}', 'UnitController@update_unit');
+    Route::get('del_unit', 'UnitController@del_unit');
+    //----------------------------- Brand -----------------------------//
+    Route::get('brand', 'BrandController@brand')->name("brand");
+    Route::get('insert_brand', 'BrandController@insert_brand');
+    Route::get('edit_brand/{id}', 'BrandController@edit_brand');
+    Route::get('update_brand/{id}', 'BrandController@update_brand');
+    Route::get('del_brand', 'BrandController@del_brand');
+
 });
