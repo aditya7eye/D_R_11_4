@@ -18,4 +18,9 @@ class Category extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Category', 'parent_id');
+    }
 }
