@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\StaffModel;
 use Illuminate\Http\Request;
+use App\Product;
+use App\BarcodeModel;
+use App\CustomerModel;
 
 class StaffController extends Controller
 {
@@ -63,5 +66,65 @@ class StaffController extends Controller
         $staff->is_del = 1;
         $staff->save();
         return 'done';
+    }
+
+    function bar()
+    {
+        // $generator = new \Picqer\Barcode\BarcodeGeneratorHTML(); 
+        // echo 'Atta'; 
+        // echo $generator->getBarcode('12345', $generator::TYPE_CODE_39);
+        // echo '00001'; 
+        return view('printbarcode');
+    }
+
+    function pos()
+    {
+        return view('pos.pos');
+    }
+
+    public function getproducts()
+    {
+        $product = Product::get('name');
+        return $product;
+    }
+    public function productdata()
+    {
+        $bid = session('store')->id;
+        $productdata = Product::where(['name'=>request('name') , 'branch_id' => $bid])->first();
+        if(isset($productdata))
+        {
+            $product = BarcodeModel::wherep_id($productdata->id)->first();
+            return ['product'=>$product, 'productdata'=> $productdata];
+        }
+        else{
+            return 'Product Not Found';
+        }
+    }
+    public function getBarcodeProducts()
+    {
+        $branch_id = session('store')->id;
+        $barcode = request('barcode');
+        $product = BarcodeModel::where(['barcode'=>$barcode, 'branch_id'=>$branch_id])->first();
+        if(isset($product))
+        {
+            $productdata = Product::where(['branch_id' => $branch_id,'id'=>$product->p_id])->first();
+            return ['product'=>$product, 'productdata'=> $productdata];
+        }
+        else{
+            return 'Product Not Found';
+        }
+    }
+    public function mobileCheck()
+    {
+        $mobile = request('mobile');
+        $customer = CustomerModel::where(['mobile'=>$mobile, 'is_del'=>1])->first();
+        if(isset($customer))
+        {
+            return $customer;
+        }
+        else
+        {            
+            return 'Customer Not Found';
+        }
     }
 }

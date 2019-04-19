@@ -75,7 +75,17 @@ Route::group(['middleware' => 'storesession'], function ()
     
     ///////////products
     Route::get('products', 'ProductController@products')->name("products");
+    Route::post('insert_products', 'ProductController@insert_products')->name("products");
+    Route::get('findsuggetion', 'ProductController@findsuggetion');
+    Route::get('getallrecord', 'ProductController@getallrecord');
 
+    Route::get('purchase', 'ProductController@purchase')->name("purchase");
+    Route::post('addpurchase', 'ProductController@addpurchase')->name("purchase");
+    Route::get('addnewrow', 'ProductController@addnewrow');
+
+    /////////////barcode
+
+    Route::get('barcode', 'BarcodeController@barcode')->name("barcode");
     //----------------------------- Store / Staff-----------------------------//
     Route::get('staff', 'StaffController@staff')->name("staff");
     Route::get('insert_staff', 'StaffController@insert_staff')->name("store");
@@ -83,4 +93,12 @@ Route::group(['middleware' => 'storesession'], function ()
     Route::get('edit_staff/{id}', 'StaffController@edit_staff');
     Route::get('update_staff/{id}', 'StaffController@update_staff');
     Route::get('del_staff', 'StaffController@del_staff');
+    Route::get('bar', 'StaffController@bar');
+
+    Route::get('pos', 'StaffController@pos');
+    Route::get('getproducts', 'StaffController@getproducts');
+    Route::get('productdata', 'StaffController@productdata');
+    Route::get('getBarcodeProducts', 'StaffController@getBarcodeProducts');
+    Route::get('mobileCheck', 'StaffController@mobileCheck');
+
 });

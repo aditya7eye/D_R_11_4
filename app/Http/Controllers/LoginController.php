@@ -57,4 +57,6 @@ class LoginController extends Controller
         $request->session()->forget('store');
         return redirect('/login_store');
     }
+
+    
 }

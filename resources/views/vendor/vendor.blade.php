@@ -101,7 +101,7 @@
                                                    maxlength="25"
                                                    id="address"
                                                    autocomplete="off"
-                                                   class="form-control required nospc"
+                                                   class="form-control required"
                                                    placeholder="Enter Vendor's Full Address">
                                         </div>
                                     </div>

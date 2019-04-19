@@ -70,7 +70,7 @@
             @endif @yield('content')
 
             <!-- Footer -->
-    @include('layouts.footer')
+    {{-- @include('layouts.footer') --}}
 
         </div>
         <!-- End page wrapper-->
@@ -87,8 +87,11 @@ $(document).ready(function () {
            
 
             $(".typeDD").select2({
-                placeholder: "Select"
+                // placeholder: "Select"
             });
+            // $(".typeDD").select2({
+            //     placeholder: "Select"
+            // });
 
 
         });

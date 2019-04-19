@@ -40,6 +40,7 @@
                 <a href="{{ url('sub_category') }}"><i class="fa fa-play"></i> <span class="nav-label">Sub Category</span> </a>
             </li>
            
+           
         </ul>
 
     </div>

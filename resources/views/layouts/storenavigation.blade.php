@@ -26,6 +26,15 @@
             <li class="{{ \App\Helpme::isActiveRoute('products') }}">
                 <a href="{{ url('products') }}"><i class="fa fa-trello"></i> <span class="nav-label">Products</span> </a>
             </li>
+            <li class="{{ \App\Helpme::isActiveRoute('purchase') }}">
+                <a href="{{ url('purchase') }}"><i class="fa fa-trello"></i> <span class="nav-label">Purchase</span> </a>
+            </li>
+            <li class="{{ \App\Helpme::isActiveRoute('barcode') }}">
+                <a href="{{ url('barcode') }}"><i class="fa fa-barcode"></i> <span class="nav-label">Barcode</span> </a>
+            </li>
+            <li class="{{ \App\Helpme::isActiveRoute('pos') }}">
+                <a href="{{ url('pos') }}"><i class="fa fa-barcode"></i> <span class="nav-label">Pos</span> </a>
+            </li>
             {{-- <li class="{{ \App\Helpme::isActiveRoute('store') }}">
                 <a href="{{ url('store') }}"><i class="fa fa-home"></i> <span class="nav-label">Store</span> </a>
             </li>
